@@ -12,5 +12,4 @@ jest.setup.js
 Dockerfile
 .dockerignore
 
-# AI Artifacts & Plans
-# (Consolidated under generic ignore rules if applicable)
+

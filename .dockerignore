@@ -13,12 +13,4 @@ Dockerfile
 .dockerignore
 
 # AI Artifacts & Plans
-Gemini.md
-implementation_plan.md
-task.md
-walkthrough.md
-.gemini/
-workflows/
-agents/
-.aider*
-.agent*
+# (Consolidated under generic ignore rules if applicable)

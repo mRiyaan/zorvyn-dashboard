@@ -1,0 +1,24 @@
+node_modules
+.next
+.git
+.gitignore
+*.md
+tests
+scripts
+jest.config.js
+jest.setup.js
+.env*
+.DS_Store
+Dockerfile
+.dockerignore
+
+# AI Artifacts & Plans
+Gemini.md
+implementation_plan.md
+task.md
+walkthrough.md
+.gemini/
+workflows/
+agents/
+.aider*
+.agent*

@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
-@theme inline {
+@theme {
+  --color-brand: var(--brand);
+  --color-bullish: var(--semantic-up);
+  --color-bearish: var(--semantic-down);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-border-grid: var(--grid-line);
+
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  /* Light Mode (Terminal Canvas: #FFFFFF) */
+  --background: #FFFFFF;
+  --foreground: #000000;
+  --grid-line: #e4e4e4;
+
+  /* Universal Semantics */
+  --brand: #FFA028;
+  /* Bloomberg Sunshade Amber */
+  --semantic-up: #0068ff;
+  /* CVD-Friendly Blue */
+  --semantic-down: #ff433d;
+  /* Crimson */
+}
+
+.dark {
+  /* Dark Mode (Terminal Canvas: #000000) */
+  --background: #000000;
+  --foreground: #FFFFFF;
+  --grid-line: #373b41;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--grid-line) transparent;
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth theme transitions */
+body,
+body * {
+  transition: background-color 0.2s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Selection colors */
+::selection {
+  background-color: var(--brand);
+  color: #000000;
 }

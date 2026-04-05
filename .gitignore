@@ -39,3 +39,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI Artifacts & Plans
+Gemini.md
+implementation_plan.md
+task.md
+walkthrough.md
+.gemini/
+workflows/
+agents/
+.aider*
+.agent*
+
+# Testing & Scripts
+/tests/
+/scripts/
+jest.config.js
+jest.setup.js

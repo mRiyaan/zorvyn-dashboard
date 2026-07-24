@@ -56,18 +56,7 @@ I selected **Next.js 15 (App Router)** as the foundation for this dashboard due 
 - **Global Theme Provider**: Leveraging `next-themes` and a centralized `globals.css` allowed for a robust, flicker-free dark/light mode implementation that persists institutional contrast requirements.
 - **Standalone Output**: The ease of generating a standalone build for Docker containerization made it the ideal choice for our Cloud Run deployment strategy.
 
-### Why Docker & Google Cloud Run instead of Vercel/Serverless?
 
-While Vercel provides excellent out-of-the-box hosting for Next.js, we explicitly chose to architect this dashboard for **containerization (Docker)** and deployment to **Google Cloud Run** for several institutional logic reasons:
-
-1.  **No Vendor Lock-in (Portability)**:
-    By building a standalone Next.js Docker image (`output: 'standalone'`), the Zorvyn codebase is completely decoupled from Vercel's proprietary edge network. This container can run identically on Google Cloud, AWS ECS, Azure, or an on-premise institutional server in a strictly regulated environment.
-
-2.  **Regulated Security Environments**:
-    Financial tech often requires deployment within Virtual Private Clouds (VPCs) disconnected from the public internet. Vercel acts as a public multi-tenant edge. A Docker container sitting in GCP Artifact Registry can be deployed into an isolated internal subnetwork matching explicit SOC2/compliance requirements.
-
-3.  **Persistent File Storage Foundations**:
-    Serverless platforms are strictly ephemeral—writing to absolute file paths (like our existing `src/lib/mockData.js`) in production won't persist across requests. While Cloud Run is also stateless, a containerized environment is far easier to migrate directly into an attached persistent volume or scale into a clustered microservice relying on Cloud SQL than refactoring a heavy edge-function application.
 
 ---
 

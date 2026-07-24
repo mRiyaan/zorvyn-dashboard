@@ -1,4 +1,4 @@
-# Terminal Prime: Zorvyn Executive Financial Dashboard
+# Terminal Prime:  Executive Financial Dashboard
 
 Terminal Prime is a high-density, institutional-grade financial dashboard built with **Next.js 15**, **Tailwind CSS v4**, and **Recharts**. It is explicitly designed following **Bloomberg Terminal aesthetics**, prioritizing data density, rapid cognitive translation, and high-visibility contrast metrics over soft, overly spacious modern web design.
 
